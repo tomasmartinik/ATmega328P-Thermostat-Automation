@@ -21,9 +21,13 @@ Data persistence is ensured by storing and retrieving settings from EEPROM memor
 
 An innovative aspect of this project is the Modbus RTU protocol library, which enables communication between a master device and the ATmega slave. Though not fully implemented in the main program, the library has been tested on the ATmega328P and is ready for use.
 
-## Usage Instructions
+# Images
 
-For detailed usage instructions, please refer to the provided user manual (USER_MANUAL.md).
+![Main screen](media/main_screen.png)
+
+![Settings date/time](media/settings1.png)
+
+![Settings calibration and hysteresis](media/settings2.png)
 
 ## Installation and Setup
 
