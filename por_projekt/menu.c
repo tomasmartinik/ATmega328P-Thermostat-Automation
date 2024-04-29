@@ -29,12 +29,12 @@ void initScreen() {
 	RTC_SetGen(1);
 	initializeLCD();
 	encoderInit();
-	RTC_SetTime(init_sec, init_min, init_hour, init_day, init_date, init_month, init_year);
+	RTC_SetTime(init_sec, init_min, init_hour, init_day, init_day, init_month, init_year);
 	stdout = &display;
 }
 
 void freezeCurrentTime() {
-	RTC_ReadTime(&frozen_sec, &frozen_min, &frozen_hour, &frozen_day, &frozen_date, &frozen_month, &frozen_year);
+	RTC_ReadTime(&frozen_sec, &frozen_min, &frozen_hour, &frozen_day, &frozen_day, &frozen_month, &frozen_year);
 }
 
 void updateSetting(ScreenState screen, int rotation) {
@@ -80,7 +80,7 @@ void displayMainScreen() {
 	uint8_t sec, min, hour, day, date, month, year;
 
 	// Simulované načtení dat z RTC
-	RTC_ReadTime(&sec, &min, &hour, &day, &date, &month, &year);
+	RTC_ReadTime(&sec, &min, &hour, &day, &day, &month, &year);
 
 	// Nastavení kurzoru na začátek prvního řádku displeje
 	setLCDCursorPosition(0, 0);
@@ -132,7 +132,7 @@ void updateSettingsTime(int rotation) {
 
 	// Fetch current time to modify
 	RTC_ReadTime(&dateTime.second, &dateTime.minute, &dateTime.hour,
-	&dateTime.day, 0, &dateTime.month, &dateTime.year);
+	&dateTime.day, &dateTime.day, &dateTime.month, &dateTime.year);
 
 	switch (currentSetting) {
 		case SET_DAY:
@@ -168,7 +168,7 @@ void updateSettingsTime(int rotation) {
 	}
 
 	RTC_SetTime(dateTime.second, dateTime.minute, dateTime.hour,
-	dateTime.day, 0, dateTime.month, dateTime.year);
+	1, dateTime.day, dateTime.month, dateTime.year);
 
 	saveDateTimeToEEPROM(dateTime, DATE_TIME_REGISTER);
 }
