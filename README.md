@@ -3,17 +3,17 @@ Automated thermostat system for ATmega328P microcontroller, controlling heating 
 
 This project implements a straightforward and intuitive automatic thermostat using the ATmega328P microcontroller. The thermostat features a user-friendly interface where a rotary encoder allows navigation through four screens, resembling a carousel:
 
-- Main screen (date, time, current temperature, desired temperature)
-- Setting 1: Date and time (adjustable)
-- Setting 2: Regulator hysteresis (adjustable)
-- Setting 3: Thermometer calibration (adjustable)
+- **Main screen** (date, time, current temperature, desired temperature)
+- **Setting 1:** Date and time (adjustable)
+- **Setting 2**: Regulator hysteresis (adjustable)
+- **Setting 3**: Thermometer calibration (adjustable)
 
 On each screen, values can be adjusted by rotating the encoder:
 
-- Main screen: Desired temperature
-- Setting 1: Date and time
-- Setting 2: Regulator hysteresis
-- Setting 3: Thermometer calibration
+- **Main screen:** Desired temperature
+- **Setting 1:** Date and time
+- **Setting 2:** Regulator hysteresis
+- **Setting 3:** Thermometer calibration
 
 For Setting 1 (date and time), the encoder button cycles through date, month, hour, minute, and second, with each position allowing adjustment of the corresponding value. While there's no explicit cursor indication, users can identify the selected position by the number of button presses or by observing the changing value.
 
